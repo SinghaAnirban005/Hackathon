@@ -174,7 +174,6 @@ const turnred = () => {
   setAttended('bg-red-600');
   dispatch(decrement());
   dispatch(percent())
- 
 };
 
 const turngreen = () => {

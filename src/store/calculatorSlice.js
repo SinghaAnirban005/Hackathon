@@ -35,6 +35,7 @@ export const calculatorSlice = createSlice({
     decrement: (state) => {
       if(state.daysAbsent < state.totalDays){
         state.daysAbsent  += 1;
+        state.daysPresent -= 1
         // Save daysAbsent to local storage after decrementing
         localStorage.setItem('daysAbsent', state.daysAbsent);
       }
@@ -44,8 +45,8 @@ export const calculatorSlice = createSlice({
 
     percent: (state) => {
       
-      let n = state.percentage((state.daysPresent / state.totalDays) * 100).toFixed(2)
-      state.percentage = n
+      state.percentage = ((state.daysPresent / state.totalDays) * 100).toFixed(2)
+     
       localStorage.setItem('percent', state.percentage);
 
       localStorage.setItem('reduxState', JSON.stringify({ calculator: state }));      

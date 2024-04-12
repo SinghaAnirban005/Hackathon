@@ -27,7 +27,7 @@ function InputBar({id}) {
   return(
 
     <>
-      <input type="text" value={[id] || ''} id={id} onChange={handleInputChange} placeholder='Enter Time slot '/>
+      <input type="text" value={inputValues[id] || ''} id={id} onChange={handleInputChange} placeholder='Enter Time slot '/>
     </>
   )
 }

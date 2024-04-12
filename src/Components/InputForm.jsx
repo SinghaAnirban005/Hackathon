@@ -51,13 +51,10 @@ function InputForm() {
   //   setSub6('')
   // }
 
-
     return(
-      <>
-        
+      <>  
       <form onSubmit={handleSubmit1}>
       <div>
-
           Enter all your subjects one by one: <input value={sub1} onChange={(e) => setSub1(e.target.value)} />
           <button type="submit">ADD</button>
         </div>
