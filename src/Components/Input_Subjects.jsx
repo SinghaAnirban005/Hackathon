@@ -85,7 +85,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { decrement, increment } from '../store/calculatorSlice';
+import { decrement, increment, percent } from '../store/calculatorSlice';
 
 function Input_Subjects({ id }) {
 //   const [attended, setAttended] = useState(() => {
@@ -147,8 +147,6 @@ function Input_Subjects({ id }) {
 //   const handleSubjectChange = (event) => {
 //     setSelectedSubject(event.target.value);
 //   };
-
-
 const [attended, setAttended] = useState(() => {
   return localStorage.getItem(`inputColor_${id}`) || 'bg-amber-50';
 });
@@ -175,11 +173,14 @@ useEffect(() => {
 const turnred = () => {
   setAttended('bg-red-600');
   dispatch(decrement());
+  dispatch(percent())
+ 
 };
 
 const turngreen = () => {
   setAttended('bg-green-400');
   dispatch(increment());
+  dispatch(percent())
 };
 
 useEffect(() => {

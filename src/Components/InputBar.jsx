@@ -6,12 +6,11 @@ function InputBar({id}) {
   const [inputValues, setInputValues] = useState(JSON.parse(localStorage.getItem('inputValues')));
 
 
-  // Function to handle input change
   const handleInputChange = (e) => {
     const { value } = e.target;
     setInputValues((prevInputValues) => ({
       ...prevInputValues,
-      [id]: value, // Use the unique index (id) as the key
+      [id]: value, 
     }));
   };
 
@@ -28,7 +27,7 @@ function InputBar({id}) {
   return(
 
     <>
-      <input type="text" value={inputValues[id] || ''} id={id} onChange={handleInputChange} placeholder='Enter Time slot '/>
+      <input type="text" value={[id] || ''} id={id} onChange={handleInputChange} placeholder='Enter Time slot '/>
     </>
   )
 }
