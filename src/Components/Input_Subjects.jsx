@@ -160,6 +160,7 @@ useEffect(() => {
   if (storedSubject) {
     setSelectedSubject(storedSubject);
   }
+
 }, [id]);
 
 useEffect(() => {
@@ -196,7 +197,6 @@ useEffect(() => {
 const handleSubjectChange = (event) => {
   setSelectedSubject(event.target.value);
 };
-
 
   return (
     <div className={attended}>
